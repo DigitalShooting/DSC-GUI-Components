@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Inject, Input } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
-import { DscApiService } from "../../../dsc-api.service";
 import { Session, DisciplinePart, Part, Config} from "../classes/session";
 
 import { DscAPI_Token, DscAPIInterface } from "../api";
