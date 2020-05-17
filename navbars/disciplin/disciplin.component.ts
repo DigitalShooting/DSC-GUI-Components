@@ -32,6 +32,9 @@ import { DscAPI_Token, DscAPIInterface } from "../../api";
 })
 export class DisciplinComponent implements OnInit {
 
+  // Enable user edit (change part, change disciplin, actions, ...)
+  @Input() enableEdit: boolean = false;
+
   @Input() config: Config;
   @Input() disziplin: Discipline;
   // @Input() disciplines: Discipline[];
@@ -61,14 +64,16 @@ export class DisciplinComponent implements OnInit {
     }
   }
   toggleMenu() {
-    this._openMenu = !this._openMenu;
-    this.openMenuChange.emit({
-      state: this._openMenu,
-      menuTitle: this.menuTitle,
-      triggerClose: false,
-    });
-    // Update selected in case of change during open menu
-    this.updateSelectedGroup();
+    if (this.enableEdit) {
+      this._openMenu = !this._openMenu;
+      this.openMenuChange.emit({
+        state: this._openMenu,
+        menuTitle: this.menuTitle,
+        triggerClose: false,
+      });
+      // Update selected in case of change during open menu
+      this.updateSelectedGroup();
+    }
   }
   
   ngOnChanges() {
@@ -83,10 +88,6 @@ export class DisciplinComponent implements OnInit {
   constructor(@Inject(DscAPI_Token) public dscAPI: DscAPIInterface) { }
 
   ngOnInit() {
-  }
-
-  openModal() {
-    // show_modal_discipline
   }
 
 }

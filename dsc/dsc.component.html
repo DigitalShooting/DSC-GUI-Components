@@ -67,14 +67,17 @@
     ></app-club>
     <app-disciplin
       fxFlex
+      [enableEdit]="enableEdit"
       [disziplin]="session.disziplin" [config]="config" [(openMenu)]="hasOpenMenu"
     ></app-disciplin>
     <app-actions
       fxFlex
+      *ngIf="enableEdit"
       [(openMenu)]="hasOpenMenu"
     ></app-actions>
     <app-part
       fxFlex
+      [enableEdit]="enableEdit"
       [session]="session"
     ></app-part>
   </div>

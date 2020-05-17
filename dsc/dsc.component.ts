@@ -39,6 +39,9 @@ export class DscComponent implements OnInit {
   
   disciplinePart: DisciplinePart;
   
+  // Enable user edit (change part, change disciplin, actions, ...)
+  @Input() enableEdit: boolean = true;
+  
   session: Session;
   config: Config;
   dscStatus: boolean = true;

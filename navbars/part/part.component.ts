@@ -10,6 +10,9 @@ import { DscAPI_Token, DscAPIInterface } from "../../api";
 })
 export class PartComponent implements OnInit {
   
+  // Enable user edit (change part, change disciplin, actions, ...)
+  @Input() enableEdit: boolean = false;
+  
   @Output()
   openPartModal = new EventEmitter<boolean>();
   
@@ -53,7 +56,9 @@ export class PartComponent implements OnInit {
   
   
   togglePart() {
-    this.dscAPI.togglePart();
+    if (this.enableEdit) {
+      this.dscAPI.togglePart();
+    }
   }
   
 
