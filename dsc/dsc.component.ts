@@ -41,36 +41,14 @@ export class DscComponent implements OnInit {
   disciplinePart: DisciplinePart;
   
   session: Session;
-  @Input() config: Config;
+  config: Config;
+  dscStatus: boolean = true;
   activePart: Part;
   
   hasOpenMenu = {state: false, menuTitle: "", triggerClose: false};
   closeMenu() {
     this.hasOpenMenu = {state: false, menuTitle: "", triggerClose: true};
   }
-  
-  
-  
-  
-  /////// TEMP
-  @Input() set sessionManual(session: Session) {
-    if (session != null) {
-      this.activePart = session.sessionParts[session.sessionIndex];
-      
-      if (this.activePart.anzahl > 0) {
-        this.selectedSeriesIndex = this.activePart.serien.length - 1;
-        this.selectedShotIndex = this.activePart.serien[this.selectedSeriesIndex].shots.length - 1;
-      }
-      else {
-        this.selectedSeriesIndex = null;
-        this.selectedShotIndex = null;
-      }
-      
-      this.disciplinePart = session.disziplin.parts[this.activePart.type]
-    }
-    this.session = session;
-  }
-  ///////////
   
   
 
@@ -100,6 +78,10 @@ export class DscComponent implements OnInit {
     
     dscAPI.config.subscribe(config => {
       this.config = config;
+    });
+    
+    dscAPI.status.subscribe(dscStatus => {
+      this.dscStatus = dscStatus;
     });
 	}
   

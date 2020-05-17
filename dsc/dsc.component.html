@@ -1,7 +1,8 @@
 <div class="dsc_detail" fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="1vh" style="height:100%;">
 
   <div fxFlex="12vmin" class="navbar navbarTop" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="1vh" *ngIf="session">
-    <img fxFlex="0 0 12vmin" style="object-fit: contain;" src="/assets/logo.png">
+    <img *ngIf="dscStatus" src="/assets/logo.png" style="object-fit: contain;" fxFlex="0 0 12vmin"/>
+    <div class="imgError" *ngIf="!dscStatus" fxFlex="0 0 12vmin"></div>
     <app-clock fxFlex></app-clock>
     <app-time
       fxFlex

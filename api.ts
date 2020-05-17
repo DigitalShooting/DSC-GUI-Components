@@ -9,6 +9,7 @@ export interface DscAPIInterface {
   connected: ReplaySubject<boolean>;
   session: ReplaySubject<Session>;
   config: ReplaySubject<Config>;
+  status: ReplaySubject<boolean>;
   
   setNewTarget();
   setPart(partId: string, forceNewPart: boolean);

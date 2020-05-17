@@ -25,13 +25,20 @@
 		margin: 0;
 	}
 
-
-	.navbar > img {
+	img {
 		border-radius: 0;
 		border: 0;
 		background-color: $base-color;
 		box-shadow: none;
 	}
+		
+	.navbar > .imgError {
+		@extend img;
+		background-color: red;
+  	mask: url(/assets/logo.png) no-repeat center / contain;
+	}
+	
+	
 
 	// Is set to the navitem div if the menu is open
 	.navitem-active {
