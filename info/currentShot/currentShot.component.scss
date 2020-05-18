@@ -1,10 +1,10 @@
 .currentShotArrow {
-  width: 78px;
+  width: 8vmin;
   float: left;
   font-size: 8vmin;
   margin-top: 1vmin;
   margin-left: 1vmin;
-  position: absolute;
+  // position: fixed;
 }
 .currentShowInfo {
   width: 100%;
@@ -15,6 +15,7 @@ h1 {
   font-weight: 500;
   font-size: 6vmin;
   width: 100%;
+  margin-left: -4vmin;
 }
 
 h2 {
@@ -22,4 +23,5 @@ h2 {
   font-size: 3vmin;
   width: 100%;
   color: rgb(128, 128, 128);
+  margin-left: -4vmin;
 }

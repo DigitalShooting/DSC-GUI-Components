@@ -19,7 +19,7 @@
 	// Safari workaround for svg height, we set in with js due to a bug in webkit
 	@media screen and(-webkit-min-device-pixel-ratio:0) {
 		.box > svg  {
-			height: 76vh;
+			height: 76%;
 		}
 	}
 
