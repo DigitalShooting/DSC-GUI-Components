@@ -71,6 +71,8 @@
 	}
 	.main {
 		padding: 0 1vh 0 1vh;
+		min-height: 0;
+		height: 100%;
 	}
 
 
@@ -208,7 +210,7 @@
 
 	.dropup-content {
 	 position: absolute;
-	 bottom: 12vmin;
+	 bottom: 12vh;
 	 padding-bottom: 1vmin;
 	 z-index: 2;
 	}

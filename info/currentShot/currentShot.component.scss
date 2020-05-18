@@ -4,7 +4,7 @@
   font-size: 8vmin;
   margin-top: 1vmin;
   margin-left: 1vmin;
-  // position: fixed;
+  position: absolute;
 }
 .currentShowInfo {
   width: 100%;
@@ -15,7 +15,7 @@ h1 {
   font-weight: 500;
   font-size: 6vmin;
   width: 100%;
-  margin-left: -4vmin;
+  // margin-left: -8vmin;
 }
 
 h2 {
@@ -23,5 +23,5 @@ h2 {
   font-size: 3vmin;
   width: 100%;
   color: rgb(128, 128, 128);
-  margin-left: -4vmin;
+  // margin-left: -8vmin;
 }
