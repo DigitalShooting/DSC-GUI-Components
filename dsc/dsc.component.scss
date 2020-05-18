@@ -90,8 +90,15 @@
 	}
 
 
+	.navbar > * {
+		min-width: 0;
+		min-height: 0;
+		overflow: hidden;
+	}
 
 	.navbar {
+		width: 100%;
+		
 		// Main Navbar text
 	  h3 {
 	    height: 40%;
