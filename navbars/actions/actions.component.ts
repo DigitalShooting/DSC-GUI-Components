@@ -60,8 +60,11 @@ export class ActionsComponent implements OnInit {
     this.dscAPI.print();
   }
   
+  
+  @Output() openScheiben = new EventEmitter();
+  
   selectParts() {
-    
+    this.openScheiben.emit();
   };
 
 }

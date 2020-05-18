@@ -96,5 +96,12 @@ export class DscComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  
+  
+  openModalPartSelect: boolean = false;
+  onPartSelection(show: boolean) {
+    this.openModalPartSelect = show;
+  }
 
 }

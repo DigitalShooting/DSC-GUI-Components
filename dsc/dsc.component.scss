@@ -1,14 +1,15 @@
+$base-color: #f5f5f5;
+$box-color: #ffffff;
+$border-color: #ebebeb;
+$border-selected-color: #000;
+$border-hoover-color: #000;
+$detail-text: rgb(51, 51, 51);
+$main-text: rgb(0, 0, 0);
+
+$border-radius: 2.5vmin;
+
 .dsc_detail {
 
-	$base-color: #f5f5f5;
-	$box-color: #ffffff;
-	$border-color: #ebebeb;
-	$border-selected-color: #000;
-	$border-hoover-color: #000;
-	$detail-text: rgb(51, 51, 51);
-	$main-text: rgb(0, 0, 0);
-
-	$border-radius: 2.5vmin;
 	
 	* {
 	  box-sizing: border-box;
@@ -73,6 +74,14 @@
 		padding: 0 1vh 0 1vh;
 		min-height: 0;
 		height: 100%;
+	}
+	
+	.mainMessage {
+		padding: 0 1vh 0 1vh;
+		min-height: 0;
+		height: 100%;
+		position: absolute;
+		background-color: red;
 	}
 
 
@@ -152,50 +161,6 @@
 	}
 
 
-	.modalBackground {
-		position: absolute;
-	  width: 100%;
-	  height: 100%;
-		left: 0%;
-	  top: 0%;
-		background-color: rgba(0, 0, 0, 0.5);
-		
-		.modal {
-		  position: fixed;
-		  width: 50%;
-		  height: 70%;
-		  left: 25%;
-		  top: 10%;
-			
-			@extend .box;
-			
-			h1 {
-				padding: 1vmin 0 1vmin 0;
-				border-bottom: 1px $border-color solid;
-			}
-			
-			.exit {
-				// right: 0;
-				padding-right: 2vmin;
-				float: right;
-			}
-			
-			.content {
-				padding: 2vmin;
-			}
-		}
-	}
-
-
-
-
-
-
-
-
-
-
-
 
 
 	// Font sizes
@@ -249,4 +214,44 @@
 	top: 0%;
 	background-color: rgba(160, 160, 160, 0.7);
 	z-index: 1;
+}
+
+
+.modalBackground {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0%;
+	top: 0%;
+	background-color: rgba(160, 160, 160, 0.7);
+	z-index: 2;
+	
+	.modal {
+		position: fixed;
+		width: 50%;
+		height: 70%;
+		left: 25%;
+		top: 10%;
+		
+		background-color: $box-color;
+		border: 1px $border-color solid;
+		overflow: hidden;
+		border-radius: $border-radius;
+		box-shadow: 0px 4px 8px 0 rgba(199, 199, 199, 0.2);
+		
+		h1 {
+			padding: 1vmin 0 1vmin 0;
+			border-bottom: 1px $border-color solid;
+		}
+		
+		.exit {
+			// right: 0;
+			padding-right: 2vmin;
+			float: right;
+		}
+		
+		.content {
+			padding: 2vmin;
+		}
+	}
 }

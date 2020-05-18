@@ -1,0 +1,19 @@
+<div class="title">
+  <h3>Scheiben</h3>
+  <p class="exit" (click)="closeDetail()">Schließen</p>
+</div>
+
+<div class="partBox" fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="1vmin">
+  <table>
+      <tr>
+        <th>Modus</th>
+        <th>Gesamt</th>
+        <th>Schüsse</th>
+      </tr>
+      <tr [ngClass]="{'bold' : i == session.sessionIndex}" *ngFor="let part of session.sessionParts; index as i;" (click)="selectPart(i)">
+        <td>{{session.disziplin.parts[part.type].title}}</td>
+        <td>{{part.gesamt}}</td>
+        <td>{{part.anzahl}}</td>
+      </tr>
+  </table>
+</div>

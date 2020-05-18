@@ -1,0 +1,44 @@
+
+.title {
+  padding: 1vh;
+  // height: 5vmin;
+  padding-top: 1vmin;
+  width: 100%;
+  border-bottom: 1px solid #ebebeb;
+  
+  h3 {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .exit {
+    padding: 0;
+    margin: 3px;
+    right: 2vmin;
+    top: 2vmin;;
+    position: absolute;
+  }
+  text-align: center;
+}
+
+.partBox {
+  width: 100%;
+  
+  .part {
+    border: 1px solid #ebebeb;
+    border-radius: 2.5vmin;
+    text-align: center;
+  }
+}
+
+
+table {
+  width: 100%;
+  border-spacing: 0px;
+  th, td {
+    font-size: 2.2vmin;
+    padding: 1vmin;
+    border: 1px solid #ebebeb;
+    
+  }
+}
