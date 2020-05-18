@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { AngularFittextModule } from 'angular-fittext';
 
 import { CurrentShotComponent } from './currentShot/currentShot.component';
 import { CurrentSeriesComponent } from './currentSeries/currentSeries.component';
@@ -13,7 +14,7 @@ import { ShotArrowComponent } from './shotArrow/shotArrow.component';
     ShotArrowComponent,
   ],
   imports: [
-    CommonModule, FlexLayoutModule,
+    CommonModule, FlexLayoutModule, AngularFittextModule,
   ],
   exports: [
     CurrentShotComponent, CurrentSeriesComponent, SeriesOverviewComponent,
