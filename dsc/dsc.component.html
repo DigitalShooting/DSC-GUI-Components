@@ -1,8 +1,8 @@
-<div class="dsc_detail" fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="1vh" style="height:100%; overflow:scroll;">
+<div class="dsc_detail" fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="var(--layoutGap)" style="height:100%; overflow:scroll;">
 
-  <div fxFlex="12vmin" class="navbar navbarTop" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="1vh" *ngIf="session">
-    <img *ngIf="dscStatus" src="/assets/logo.png" style="object-fit: contain;" fxFlex="0 0 12vmin"/>
-    <div class="imgError" *ngIf="!dscStatus" fxFlex="0 0 12vmin"></div>
+  <div fxFlex="var(--navBarHeight)" class="navbar navbarTop" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="var(--layoutGap)" *ngIf="session">
+    <img *ngIf="dscStatus" src="/assets/logo.png" style="object-fit: contain;" fxFlex="0 0 var(--navBarHeight)"/>
+    <div class="imgError" *ngIf="!dscStatus" fxFlex="0 0 var(--navBarHeight)"></div>
     <app-clock fxFlex></app-clock>
     <app-time
       fxFlex
@@ -26,17 +26,17 @@
     ></app-sum>
   </div>
 
-  <div fxFlex class="main" fxLayout fxLayout.xs="column" fxLayoutAlign="space-between" fxLayoutGap="1vh" *ngIf="session">
+  <div fxFlex class="main" fxLayout fxLayout.xs="column" fxLayoutAlign="space-between" fxLayoutGap="var(--layoutGap)" *ngIf="session">
     <app-target class="target" fxFlex="1 1 calc(65%)" fxFlex.xs="1 0 35%" class="box" [target]="session.disziplin.scheibe" [series]="getCurrentSeries()" [selectedShotIndex]="selectedShotIndex" [has_trial_corner]="disciplinePart.probeEcke" [width]="'100%'" [height]="'100%'"></app-target>
     <div style="overflow:scroll;" fxFlex.gt-xs="1 1 auto" fxFlex.xs="1 1 auto" *ngIf="activePart.anzahl > 0">
-      <div style="width: 100%;" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1vh">
+      <div style="width: 100%;" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="var(--layoutGap)">
         <app-current-shot
           class="box contentBox"
           *ngIf="getCurrentShot()"
           fxFlex="none"
           [shot]="getCurrentShot()"
         ></app-current-shot>
-        <div fxLayout fxLayout.xs="row" fxLayoutAlign="space-around start" fxLayoutGap="1vh">
+        <div fxLayout fxLayout.xs="row" fxLayoutAlign="space-around start" fxLayoutGap="var(--layoutGap)">
           <app-current-series
             class="contentBox"
             *ngIf="getCurrentSeries().anzahl > 0"
@@ -57,7 +57,7 @@
   </div>
 
 
-  <div fxFlex="12vmin" class="navbar navbarBottom" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="1vh" *ngIf="session">
+  <div fxFlex="var(--navBarHeight)" class="navbar navbarBottom" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="var(--layoutGap)" *ngIf="session">
     <app-user
       fxFlex
       [user]="session.user" [config]="config"

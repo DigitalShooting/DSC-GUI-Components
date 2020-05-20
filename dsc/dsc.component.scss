@@ -1,12 +1,57 @@
-$base-color: #f5f5f5;
-$box-color: #ffffff;
-$border-color: #ebebeb;
-$border-selected-color: #000;
-$border-hoover-color: #000;
-$detail-text: rgb(51, 51, 51);
-$main-text: rgb(0, 0, 0);
 
-$border-radius: 2.5vmin;
+:root {
+  // --dscBaseScale: 1;
+  --navBarHeight: calc(12vmin * var(--dscBaseScale));
+  --navBarDropUpPadding: calc(1vmin * var(--dscBaseScale));
+  --navBarDropUpBoxPadding: calc(1vmin * var(--dscBaseScale));
+  --navBarDropUpBoxMargin: calc(1vmin * var(--dscBaseScale));
+	--layoutGap: calc(1vh * var(--dscBaseScale));
+	--fontSizeNavBarMain: calc(3vmin * var(--dscBaseScale));
+	--fontSizeNavBarDetail: calc(2vmin * var(--dscBaseScale));
+	--fontSizeInfoBoxTitle: calc(2.5vmin * var(--dscBaseScale));
+  --fontSizeDropUpItem: calc(3vmin * var(--dscBaseScale));
+	
+	
+	// Info
+	--overTimeTextColor: #ff0000;
+	
+	//// Serie
+	--fontSizeInfoSeriesSum: calc(2.2vmin * var(--dscBaseScale));
+	
+	//// Current Shot
+	--fontSizeInfoCurrentShotArrow: calc(8vmin * var(--dscBaseScale));
+	--fontSizeInfoCurrentShot: calc(6vmin * var(--dscBaseScale));
+	--fontSizeInfoCurrentShotTeiler: calc(3vmin * var(--dscBaseScale));
+	--currentShotArrowMargin: calc(1vmin * var(--dscBaseScale));
+	
+	//// Part Overview Modal
+	--partOverviewTitlePadding: calc(1vmin * var(--dscBaseScale));
+	--partOverviewExitRight: calc(2vmin * var(--dscBaseScale));
+	--partOverviewExitTop: calc(2vmin * var(--dscBaseScale));
+	--partOverviewFontSize: calc(2.2vmin * var(--dscBaseScale));
+	--partOverviewCellPadding: calc(1vmin * var(--dscBaseScale));
+  
+	
+	// Navbar
+	--navBarDisziplinSelectedGroupsPadding: calc(5vmin * var(--dscBaseScale));
+	
+	--modalTitlePadding: calc(1vmin * var(--dscBaseScale));
+  --modalExitPaddingRight: calc(2vmin * var(--dscBaseScale));
+  --modalContentPadding: calc(2vmin * var(--dscBaseScale));
+	
+  --borderRadius: calc(2.5vmin * var(--dscBaseScale));
+  --mainTextColor: rgb(0, 0, 0);
+  --detailTextColor: rgb(51, 51, 51);
+  
+  --baseColor: #f5f5f5;
+  --boxColor: #ffffff;
+  --borderColor: #ebebeb;
+  --borderColorHover: #000000;
+  --borderColorSelected: #000000;
+  
+}
+
+
 
 .dsc_detail {
 
@@ -33,7 +78,7 @@ $border-radius: 2.5vmin;
 	img {
 		border-radius: 0;
 		border: 0;
-		background-color: $base-color;
+		background-color: var(--baseColor);
 		box-shadow: none;
 	}
 		
@@ -50,7 +95,7 @@ $border-radius: 2.5vmin;
 		position: relative;
 		z-index: 3;
 		
-		border: 3px $border-hoover-color solid !important;
+		border: 3px var(--borderColorHover) solid !important;
 	}
 
 	// container of a navitem with its dropup
@@ -65,19 +110,19 @@ $border-radius: 2.5vmin;
 	}
 
 	.navbarTop {
-		padding: 1vh 1vh 0 1vh;
+		padding: var(--layoutGap) var(--layoutGap) 0 var(--layoutGap);
 	}
 	.navbarBottom {
-		padding: 0 1vh 1vh 1vh;
+		padding: 0 var(--layoutGap) var(--layoutGap) var(--layoutGap);
 	}
 	.main {
-		padding: 0 1vh 0 1vh;
+		padding: 0 var(--layoutGap) 0 var(--layoutGap);
 		min-height: 0;
 		height: 100%;
 	}
 	
 	.mainMessage {
-		padding: 0 1vh 0 1vh;
+		padding: 0 var(--layoutGap) 0 var(--layoutGap);
 		min-height: 0;
 		height: 100%;
 		position: absolute;
@@ -94,10 +139,10 @@ $border-radius: 2.5vmin;
 	.buttonSelected {
 		position: relative;
 		z-index: 3;
-		border: 3px $border-selected-color solid !important;
+		border: 3px var(--borderColorSelected) solid !important;
 	}
 	.navbar .button:hover {
-		border: 3px $border-hoover-color solid !important;
+		border: 3px var(--borderColorHover) solid !important;
 	}
 
 
@@ -112,9 +157,9 @@ $border-radius: 2.5vmin;
 		// Main Navbar text
 	  h3 {
 	    height: 40%;
-	    font-size: 3vmin;
+	    font-size: var(--fontSizeNavBarMain);
 			
-			color: $main-text;
+			color: var(--mainTextColor);
 			font-weight: 500;
 			white-space: nowrap;
 			padding: 0 0.5vmin 0 0.5vmin;
@@ -122,8 +167,8 @@ $border-radius: 2.5vmin;
 		// Navbar top and bottom label
 	  h4 {
 	    height: 30%;
-	    font-size: 2vmin;
-			color: $detail-text;
+	    font-size: var(--fontSizeNavBarDetail);
+			color: var(--detailTextColor);
 			font-weight: 300;
 			white-space: nowrap;
 	  }
@@ -139,10 +184,10 @@ $border-radius: 2.5vmin;
 
 
 	.box {
-		background-color: $box-color;
-		border: 1px $border-color solid;
+		background-color: var(--boxColor);
+		border: 1px var(--borderColor) solid;
 		overflow: hidden;
-		border-radius: $border-radius;
+		border-radius: var(--borderRadius);
 		box-shadow: 0px 4px 8px 0 rgba(199, 199, 199, 0.2);
 	}
 
@@ -153,7 +198,7 @@ $border-radius: 2.5vmin;
 		h3 {
 			margin: 5px;
 			margin-bottom: 15px;
-			font-size: 2.5vmin;
+			font-size: var(--fontSizeInfoBoxTitle);
 		}
 	}
 
@@ -172,8 +217,8 @@ $border-radius: 2.5vmin;
 
 	.dropup-content {
 	 position: absolute;
-	 bottom: 12vmin;
-	 padding-bottom: 1vmin;
+	 bottom: var(--navBarHeight);
+	 padding-bottom: var(--navBarDropUpPadding);
 	 z-index: 2;
 	}
 
@@ -190,11 +235,11 @@ $border-radius: 2.5vmin;
 	.dropup-content .box {
 	  text-align: center;
 	  background-color: #fff;
-	  margin: 1vmin 0 1vmin 0;
-	  padding: 2vmin 0 2vmin 0;
-	  font-size: 3vmin;
-		border: 1px $border-color solid;
-		border-radius: $border-radius;
+	  margin: var(--navBarDropUpBoxPadding) 0 var(--navBarDropUpBoxPadding) 0;
+	  padding: var(--navBarDropUpBoxMargin) 0 var(--navBarDropUpBoxMargin) 0;
+	  font-size: var(--fontSizeDropUpItem);
+		border: 1px var(--borderColor) solid;
+		border-radius: var(--borderRadius);
 	  color: black;
 	  text-decoration: none;
 	  display: block;
@@ -230,25 +275,25 @@ $border-radius: 2.5vmin;
 		left: 25%;
 		top: 10%;
 		
-		background-color: $box-color;
-		border: 1px $border-color solid;
+		background-color: var(--boxColor);
+		border: 1px var(--borderColor) solid;
 		overflow: hidden;
-		border-radius: $border-radius;
+		border-radius: var(--borderRadius);
 		box-shadow: 0px 4px 8px 0 rgba(199, 199, 199, 0.2);
 		
 		h1 {
-			padding: 1vmin 0 1vmin 0;
-			border-bottom: 1px $border-color solid;
+			padding: var(--modalTitlePadding) 0 var(--modalTitlePadding) 0;
+			border-bottom: 1px var(--borderColor) solid;
 		}
 		
 		.exit {
 			// right: 0;
-			padding-right: 2vmin;
+			padding-right: var(--modalExitPaddingRight);
 			float: right;
 		}
 		
 		.content {
-			padding: 2vmin;
+			padding: var(--modalContentPadding);
 		}
 	}
 }

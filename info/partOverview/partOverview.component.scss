@@ -1,8 +1,6 @@
 
 .title {
-  padding: 1vh;
-  // height: 5vmin;
-  padding-top: 1vmin;
+  padding: var(--partOverviewTitlePadding);
   width: 100%;
   border-bottom: 1px solid #ebebeb;
   
@@ -14,8 +12,8 @@
   .exit {
     padding: 0;
     margin: 3px;
-    right: 2vmin;
-    top: 2vmin;;
+    right: var(--partOverviewExitRight);
+    top: var(--partOverviewExitTop);
     position: absolute;
   }
   text-align: center;
@@ -25,8 +23,8 @@
   width: 100%;
   
   .part {
-    border: 1px solid #ebebeb;
-    border-radius: 2.5vmin;
+    border: 1px solid var(--borderColor);
+    border-radius: var(--borderRadius);
     text-align: center;
   }
 }
@@ -36,9 +34,9 @@ table {
   width: 100%;
   border-spacing: 0px;
   th, td {
-    font-size: 2.2vmin;
-    padding: 1vmin;
-    border: 1px solid #ebebeb;
+    font-size: var(--partOverviewFontSize);
+    padding: var(--partOverviewCellPadding);
+    border: 1px solid var(--borderColor);
     
   }
 }

@@ -1,10 +1,9 @@
 .currentShotArrow {
   width: 25%;
   float: left;
-  font-size: 8vmin;
-  margin-top: 1vmin;
-  margin-left: 1vmin;
-  // position: absolute;
+  font-size: var(--fontSizeInfoCurrentShotArrow);
+  margin-top: var(--currentShotArrowMargin);
+  margin-left: var(--currentShotArrowMargin);
 }
 .currentShowInfo {
   float: left;
@@ -15,15 +14,13 @@
 
 h1 {
   font-weight: 500;
-  font-size: 6vmin;
+  font-size: var(--fontSizeInfoCurrentShot);
   width: 100%;
-  // margin-left: -8vmin;
 }
 
 h2 {
   font-weight: 200;
-  font-size: 3vmin;
+  font-size: var(--fontSizeInfoCurrentShotTeiler);
   width: 100%;
   color: rgb(128, 128, 128);
-  // margin-left: -8vmin;
 }
