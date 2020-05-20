@@ -1,13 +1,15 @@
 .currentShotArrow {
-  width: 8vmin;
+  width: 25%;
   float: left;
   font-size: 8vmin;
   margin-top: 1vmin;
   margin-left: 1vmin;
-  position: absolute;
+  // position: absolute;
 }
 .currentShowInfo {
-  width: 100%;
+  float: left;
+  width: 50%;
+  white-space: nowrap;
 }
 
 
