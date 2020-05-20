@@ -7,7 +7,7 @@ import { Session } from "../../classes/session";
   templateUrl: './time.component.html',
   styleUrls: ['./time.component.scss']
 })
-export class TimeComponent {
+export class TimeComponent implements OnInit {
 
   @Input() session: Session;
   
@@ -70,11 +70,11 @@ export class TimeComponent {
     clearInterval( this.refreshIntervalId );
     this.refreshIntervalId = setInterval(this.updateClock.bind(this), 1000);
     this.updateClock();
-
-    // if (
-    //   this.session.time.enabled === false
-    // ) $scope.hidden = true;
-    // else $scope.hidden = false;
+  }
+  
+  baseScale: number = 1;
+  ngOnInit() {
+    this.baseScale = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--dscBaseScale'));
   }
 
 }

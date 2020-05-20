@@ -87,7 +87,9 @@ export class DisciplinComponent implements OnInit {
 
   constructor(@Inject(DscAPI_Token) public dscAPI: DscAPIInterface) { }
 
+  baseScale: number = 1;
   ngOnInit() {
+    this.baseScale = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--dscBaseScale'));
   }
 
 }

@@ -1,10 +1,10 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-clock',
   templateUrl: './clock.component.html',
 })
-export class ClockComponent implements OnDestroy {
+export class ClockComponent implements OnInit, OnDestroy {
   date: Date = new Date();
   timerID: number;
 
@@ -14,5 +14,10 @@ export class ClockComponent implements OnDestroy {
 
   ngOnDestroy() {
     clearInterval(this.timerID);
+  }
+  
+  baseScale: number = 1;
+  ngOnInit() {
+    this.baseScale = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--dscBaseScale'));
   }
 }

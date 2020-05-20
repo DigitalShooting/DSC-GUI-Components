@@ -1,4 +1,4 @@
-<h3 fittext [fontUnit]="'vmin'" [maxFontSize]="'3'">Aktuelle Serie</h3>
+<h3 fittext [fontUnit]="'vmin'" [maxFontSize]="3*baseScale">Aktuelle Serie</h3>
 <table>
   <tr class="button" *ngFor="let shot of series.shots; index as i;" (click)="selectShot(i)" [ngClass]="{'overtime' : shot.overtime}">
     <td>{{shot.number}}.</td>

@@ -14,7 +14,9 @@ export class UserComponent implements OnInit {
 
   constructor() { }
 
+  baseScale: number = 1;
   ngOnInit() {
+    this.baseScale = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--dscBaseScale'));
   }
 
 }

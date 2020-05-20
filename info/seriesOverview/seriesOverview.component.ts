@@ -1,4 +1,4 @@
-import { Component, Output, Input, EventEmitter } from '@angular/core';
+import { Component, Output, Input, EventEmitter, OnInit } from '@angular/core';
 
 import { Session, Part } from "../../classes/session";
 
@@ -8,7 +8,7 @@ import { Session, Part } from "../../classes/session";
   templateUrl: './seriesOverview.component.html',
   styleUrls: ['./seriesOverview.component.scss'],
 })
-export class SeriesOverviewComponent {
+export class SeriesOverviewComponent implements OnInit {
   
   currentPart: Part;
 
@@ -25,4 +25,9 @@ export class SeriesOverviewComponent {
   }
 
   constructor() { }
+  
+  baseScale: number = 1;
+  ngOnInit() {
+    this.baseScale = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--dscBaseScale'));
+  }
 }

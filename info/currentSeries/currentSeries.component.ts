@@ -1,4 +1,4 @@
-import { Component, Output, Input, EventEmitter } from '@angular/core';
+import { Component, Output, Input, EventEmitter, OnInit } from '@angular/core';
 
 import { Session, Serie, Target } from "../../classes/session";
 
@@ -7,7 +7,7 @@ import { Session, Serie, Target } from "../../classes/session";
   templateUrl: './currentSeries.component.html',
   styleUrls: ['./currentSeries.component.scss']
 })
-export class CurrentSeriesComponent {
+export class CurrentSeriesComponent implements OnInit {
   
   @Input() series: Serie;
   @Input() selectedShotIndex: number;
@@ -18,4 +18,11 @@ export class CurrentSeriesComponent {
   }
   
   constructor() { }
+  
+  baseScale: number = 1;
+  ngOnInit() {
+    this.baseScale = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--dscBaseScale'));
+  }
+  
+  
 }
