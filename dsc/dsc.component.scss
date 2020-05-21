@@ -149,31 +149,33 @@
 	.navbar > * {
 		min-width: 0;
 		min-height: 0;
-		// overflow: hidden;
 	}
 
 	.navbar {
 		
 		// Main Navbar text
 	  h3 {
-	    height: 40%;
 	    font-size: var(--fontSizeNavBarMain);
 			
 			color: var(--mainTextColor);
 			font-weight: 500;
 			white-space: nowrap;
 			padding: 0 0.5vmin 0 0.5vmin;
+      flex: 0 0 auto;
 	  }
 		// Navbar top and bottom label
 	  h4 {
-	    height: 30%;
 	    font-size: var(--fontSizeNavBarDetail);
 			color: var(--detailTextColor);
 			font-weight: 300;
 			white-space: nowrap;
+      flex: 0 0 auto;
 	  }
 		
 		.navitem {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
 			height: 100%;
 			width: 100%;
 			@extend .box;
