@@ -165,3 +165,8 @@ export class ConfigLine {
   id: string;
   title: string;
 }
+
+export class DSCMessage {
+  title: string;
+  text: string;
+}

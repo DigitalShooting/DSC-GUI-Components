@@ -91,13 +91,29 @@
   
   <div class="modalBackground" *ngIf="openModalPartSelect">
     <div class="modal">
-      <app-part-overview
-        class="contentBox"
-        *ngIf="session.sessionParts.length > 0"
-        fxFlex="40 1 auto" fxFlex.xs="50"
-        [session]="session"
-        (onSelection)="onPartSelection(false)"
-      ></app-part-overview>
+      <div class="title">
+        <h1>Scheiben</h1>
+        <p class="exit" (click)="onPartSelection(false)">Schließen</p>
+      </div>
+      <div class="body">
+        <app-part-overview
+          [session]="session"
+          (onSelection)="onPartSelection(false)"
+        ></app-part-overview>
+      </div>
+    </div>  
+  </div>
+  
+  <div class="modalBackground" (click)="message = null;" *ngIf="message">
+    <div class="modal">
+      <div class="title">
+        <h1>{{message.title}}</h1>
+        <!-- <p class="exit" (click)="closeDetail()">Schließen</p> -->
+      </div>
+      <div class="body">
+        <p>{{message.text}}</p>
+      </div>
+      
     </div>  
   </div>
 

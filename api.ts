@@ -2,7 +2,7 @@ import { InjectionToken } from '@angular/core'
 
 import { ReplaySubject } from "rxjs";
 
-import { Session, Config, User } from "./classes/session";
+import { Session, Config, User, DSCMessage } from "./classes/session";
 
 
 export interface DscAPIInterface {
@@ -10,6 +10,7 @@ export interface DscAPIInterface {
   session: ReplaySubject<Session>;
   config: ReplaySubject<Config>;
   status: ReplaySubject<boolean>;
+  message: ReplaySubject<DSCMessage>;
   
   setNewTarget();
   setPart(partId: string, forceNewPart: boolean);

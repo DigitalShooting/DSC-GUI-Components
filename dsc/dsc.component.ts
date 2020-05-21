@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, Inject, Input } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
-import { Session, DisciplinePart, Part, Config} from "../classes/session";
+import { Session, DisciplinePart, Part, Config, DSCMessage } from "../classes/session";
 
 import { DscAPI_Token, DscAPIInterface } from "../api";
 
@@ -53,7 +53,9 @@ export class DscComponent implements OnInit {
   }
   
   
-
+  messageHideTimeout: number;
+  message: DSCMessage;
+  
   constructor(@Inject(DscAPI_Token) public dscAPI: DscAPIInterface) {
     dscAPI.connected.subscribe(connected => console.log("isConnected", connected))
     dscAPI.session.subscribe(session => {
@@ -84,6 +86,14 @@ export class DscComponent implements OnInit {
     
     dscAPI.status.subscribe(dscStatus => {
       this.dscStatus = dscStatus;
+    });
+    
+    dscAPI.message.subscribe(message => {
+      clearTimeout(this.messageHideTimeout);
+      this.message = message
+      this.messageHideTimeout = setTimeout(() => {
+        this.message = null;
+      }, 5000);
     });
 	}
   

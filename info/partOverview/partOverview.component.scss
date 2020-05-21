@@ -1,35 +1,3 @@
-
-.title {
-  padding: var(--partOverviewTitlePadding);
-  width: 100%;
-  border-bottom: 1px solid #ebebeb;
-  
-  h3 {
-    text-align: center;
-    width: 100%;
-  }
-  
-  .exit {
-    padding: 0;
-    margin: 3px;
-    right: var(--partOverviewExitRight);
-    top: var(--partOverviewExitTop);
-    position: absolute;
-  }
-  text-align: center;
-}
-
-.partBox {
-  width: 100%;
-  
-  .part {
-    border: 1px solid var(--borderColor);
-    border-radius: var(--borderRadius);
-    text-align: center;
-  }
-}
-
-
 table {
   width: 100%;
   border-spacing: 0px;
@@ -37,6 +5,5 @@ table {
     font-size: var(--partOverviewFontSize);
     padding: var(--partOverviewCellPadding);
     border: 1px solid var(--borderColor);
-    
   }
 }

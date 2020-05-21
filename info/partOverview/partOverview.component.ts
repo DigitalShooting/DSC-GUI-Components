@@ -17,10 +17,6 @@ export class PartOverviewComponent {
     this.dscAPI.setSessionIndex(index);
     this.onSelection.emit();
   }
-  
-  closeDetail() {
-    this.onSelection.emit();
-  }
 
   constructor(@Inject(DscAPI_Token) public dscAPI: DscAPIInterface) { }
 }
