@@ -10,6 +10,7 @@ import { Session, Serie, Target } from "../../classes/session";
 export class CurrentSeriesComponent implements OnInit {
   
   @Input() series: Serie;
+  
   @Input() selectedShotIndex: number;
   @Output() onChangeSelection = new EventEmitter<number>();
   
@@ -23,6 +24,5 @@ export class CurrentSeriesComponent implements OnInit {
   ngOnInit() {
     this.baseScale = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--dscBaseScale'));
   }
-  
   
 }

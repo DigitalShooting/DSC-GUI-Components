@@ -33,7 +33,6 @@ import { DscAPI_Token, DscAPIInterface } from "../api";
   ]
 })
 export class DscComponent implements OnInit {
-
   selectedShotIndex: number = 0;
   selectedSeriesIndex: number = 0;
   
@@ -59,8 +58,6 @@ export class DscComponent implements OnInit {
   constructor(@Inject(DscAPI_Token) public dscAPI: DscAPIInterface) {
     dscAPI.connected.subscribe(connected => console.log("isConnected", connected))
     dscAPI.session.subscribe(session => {
-      // console.log("setSession", session);
-      
       if (session != null) {
         this.activePart = session.sessionParts[session.sessionIndex];
         
@@ -76,8 +73,6 @@ export class DscComponent implements OnInit {
         this.disciplinePart = session.disziplin.parts[this.activePart.type]
       }
       this.session = session;
-      
-      
     });
     
     dscAPI.config.subscribe(config => {
@@ -107,11 +102,8 @@ export class DscComponent implements OnInit {
   ngOnInit() {
   }
   
-  
-  
   openModalPartSelect: boolean = false;
   onPartSelection(show: boolean) {
     this.openModalPartSelect = show;
   }
-
 }

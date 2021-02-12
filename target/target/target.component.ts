@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Session, Target, Serie } from "../../classes/session";
+import { Session, Target, Serie, Shot } from "../../classes/session";
 
 @Component({
   selector: 'app-target',
@@ -43,6 +43,7 @@ export class TargetComponent implements OnInit {
   private calculateScale(series: Serie, target: Target): number {
     var shot = series.shots[this.selectedShotIndex];
     
+    var minZoom = (target.ringe[target.ringe.length-1].width*50 - target.kugelDurchmesser*100) / shot.teiler;
     var zoom = 1;
     if (shot != null) {
       target.ringe.every(ring => {
@@ -55,6 +56,8 @@ export class TargetComponent implements OnInit {
         return true;
       });
     }
+    
+    if (zoom > minZoom) return minZoom;
     return zoom;
   }
   

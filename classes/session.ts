@@ -49,7 +49,7 @@ export class Serie {
 
 export class Shot {
   ring: ShotRing
-  time: Date;
+  time: number;
   x: number;
   y: number;
   teiler: number;
