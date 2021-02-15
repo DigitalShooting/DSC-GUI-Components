@@ -15,7 +15,7 @@ export class TimeComponent implements OnInit {
   label = "";
   rest = "";
   gesamt = "";
-  private refreshIntervalId: null | number | NodeJS.Timer;
+  private refreshIntervalId: number;
   
   secondsToString(seconds) {
 		var numhours = Math.floor(seconds / 3600);
@@ -68,7 +68,7 @@ export class TimeComponent implements OnInit {
 
   ngOnChanges() {
     clearInterval( this.refreshIntervalId );
-    this.refreshIntervalId = setInterval(this.updateClock.bind(this), 1000);
+    this.refreshIntervalId = window.setInterval(this.updateClock.bind(this), 1000);
     this.updateClock();
   }
   

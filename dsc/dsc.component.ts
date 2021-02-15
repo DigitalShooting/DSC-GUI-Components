@@ -52,7 +52,7 @@ export class DscComponent implements OnInit {
   }
   
   
-  messageHideTimeout: null | number | NodeJS.Timer;
+  messageHideTimeout: number;
   message: DSCMessage;
   
   constructor(@Inject(DscAPI_Token) public dscAPI: DscAPIInterface) {
@@ -86,7 +86,7 @@ export class DscComponent implements OnInit {
     dscAPI.message.subscribe(message => {
       clearTimeout(this.messageHideTimeout);
       this.message = message
-      this.messageHideTimeout = setTimeout(() => {
+      this.messageHideTimeout = window.setTimeout(() => {
         this.message = null;
       }, 5000);
     });
