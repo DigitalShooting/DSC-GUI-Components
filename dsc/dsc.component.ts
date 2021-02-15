@@ -52,7 +52,7 @@ export class DscComponent implements OnInit {
   }
   
   
-  messageHideTimeout: number;
+  messageHideTimeout: NodeJS.Timer;
   message: DSCMessage;
   
   constructor(@Inject(DscAPI_Token) public dscAPI: DscAPIInterface) {

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DscComponent } from './dsc.component';
+import { DscPrintComponent } from './dsc-print.component';
 
-describe('DscComponent', () => {
-  let component: DscComponent;
-  let fixture: ComponentFixture<DscComponent>;
+describe('DscPrintComponent', () => {
+  let component: DscPrintComponent;
+  let fixture: ComponentFixture<DscPrintComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DscComponent ]
+      declarations: [ DscPrintComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DscComponent);
+    fixture = TestBed.createComponent(DscPrintComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
