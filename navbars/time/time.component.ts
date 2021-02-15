@@ -15,7 +15,7 @@ export class TimeComponent implements OnInit {
   label = "";
   rest = "";
   gesamt = "";
-  private refreshIntervalId: NodeJS.Timer;
+  private refreshIntervalId: null | number | NodeJS.Timer;
   
   secondsToString(seconds) {
 		var numhours = Math.floor(seconds / 3600);
