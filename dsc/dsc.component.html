@@ -1,94 +1,93 @@
-<div class="dsc_detail" fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="var(--layoutGap)" style="height:100%; overflow:auto;">
+<div class="dsc_detail flex-container-column flex-justify-space-between" style="height:100%; overflow:auto;">
 
-  <div fxFlex="var(--navBarHeight)" class="navbar navbarTop" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="var(--layoutGap)" *ngIf="session">
-    <img *ngIf="dscStatus" src="/assets/logo.png" style="object-fit: contain;" fxFlex="0 0 var(--navBarHeight)"/>
-    <div class="imgError" *ngIf="!dscStatus" fxFlex="0 0 var(--navBarHeight)"></div>
-    <app-clock fxFlex></app-clock>
+  <div  class="navbar navbarTop flex-container-row flex-justify-space-between" *ngIf="session">
+    <img *ngIf="dscStatus" class="dscStatusLogo" src="/assets/logo.png" style="object-fit: contain;"/>
+    <div class="dscStatusLogo imgError" *ngIf="!dscStatus"></div>
+    <app-clock class="flex-item"></app-clock>
     <app-time
-      fxFlex
+      class="flex-item"
       *ngIf="activePart.time.enabled === true"
       [session]="session"
     ></app-time>
     <app-shots
-      fxFlex
+      class="flex-item"
       *ngIf="activePart.anzahl > 0"
       [session]="session"
     ></app-shots>
     <app-average
-      fxFlex
+      class="flex-item"
       *ngIf="activePart.anzahl > 0"
       [session]="session"
     ></app-average>
     <app-sum
-      fxFlex
+      class="flex-item"
       *ngIf="activePart.anzahl > 0"
       [session]="session"
     ></app-sum>
   </div>
 
-  <div fxFlex class="main" fxLayout fxLayout.xs="column" fxLayoutAlign="space-between" fxLayoutGap="var(--layoutGap)" *ngIf="session">
-    <app-target class="target" fxFlex="1 1 calc(65%)" fxFlex.xs="1 0 35%" class="box" [target]="session.disziplin.scheibe" [series]="getCurrentSeries()" [selectedShotIndex]="selectedShotIndex" [has_trial_corner]="disciplinePart.probeEcke" [width]="'100%'" [height]="'100%'"></app-target>
-    <div style="overflow:auto;" fxFlex.gt-xs="1 1 auto" fxFlex.xs="1 1 auto" *ngIf="activePart.anzahl > 0">
-      <div style="width: 100%;" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="var(--layoutGap)">
+  <div class="flex-item" class="main flex-container-row flex-justify-space-between" *ngIf="session">
+    <div class="target box">
+      <app-target [target]="session.disziplin.scheibe" [series]="getCurrentSeries()" [selectedShotIndex]="selectedShotIndex" [has_trial_corner]="disciplinePart.probeEcke" [width]="'100%'" [height]="'100%'"></app-target>
+    </div>
+    <div class="sessionInfoBox" *ngIf="activePart.anzahl > 0">
+      <div class="flex-container-column flex-align-items-stretch">
         <app-current-shot
-          class="box contentBox"
+          class="box contentBox currentShot"
           *ngIf="getCurrentShot()"
-          fxFlex="none"
           [shot]="getCurrentShot()"
         ></app-current-shot>
-        <div fxLayout fxLayout.xs="row" fxLayoutAlign="space-around start" fxLayoutGap="var(--layoutGap)">
+        <div class="flex-item flex-container-row flex-justify-start flex-justify-space-around">
           <app-current-series
-            class="contentBox"
+            class="contentBox currentSeries"
             *ngIf="getCurrentSeries().anzahl > 0"
-            fxFlex="60" fxFlex.xs="50"
             [series]="getCurrentSeries()" [selectedShotIndex]="selectedShotIndex"
             (onChangeSelection)="selectedShotIndex = $event"
           ></app-current-series>
           <app-series-overview
-            class="contentBox"
+            class="contentBox series"
             *ngIf="activePart.anzahl > 0"
-            fxFlex="40 1 auto" fxFlex.xs="50"
             [session]="session" [selectedSeriesIndex]="selectedSeriesIndex"
             (onChangeSelection)="selectedSeriesIndex = $event"
-          ></app-series-overview>            
+          ></app-series-overview>
         </div>
       </div>
     </div>
   </div>
 
 
-  <div fxFlex="var(--navBarHeight)" class="navbar navbarBottom" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="var(--layoutGap)" *ngIf="session">
+  <div class="navbar navbarBottom flex-container-row flex-justify-space-between" *ngIf="session">
     <app-user
-      fxFlex
+      class="flex-item"
       [user]="session.user" [config]="config"
     ></app-user>
     <app-club
-      fxFlex
+      class="flex-item"
       *ngIf="session.user.verein != ''"
       [user]="session.user"
     ></app-club>
     <app-disciplin
-      fxFlex
+      class="flex-item"
       [enableEdit]="enableEdit"
       [disziplin]="session.disziplin" [config]="config" [(openMenu)]="hasOpenMenu"
     ></app-disciplin>
     <app-actions
-      fxFlex
+      class="flex-item"
       *ngIf="enableEdit"
       [(openMenu)]="hasOpenMenu"
       (openScheiben)="onPartSelection(true)"
     ></app-actions>
     <app-part
-      fxFlex
+      class="flex-item"
       [enableEdit]="enableEdit"
       [session]="session"
     ></app-part>
   </div>
-  
-  
-  
-  
-  
+
+
+
+
+
   <div class="modalBackground" *ngIf="openModalPartSelect">
     <div class="modal">
       <div class="title">
@@ -101,9 +100,9 @@
           (onSelection)="onPartSelection(false)"
         ></app-part-overview>
       </div>
-    </div>  
+    </div>
   </div>
-  
+
   <div class="modalBackground" (click)="message = null;" *ngIf="message">
     <div class="modal">
       <div class="title">
@@ -113,17 +112,17 @@
       <div class="body">
         <p>{{message.text}}</p>
       </div>
-      
-    </div>  
+
+    </div>
   </div>
 
-  
+
 
 </div>
 
-  
+
 
 
 <div class="grayBackground" [@inOutAnimation] (click)="closeMenu()" *ngIf="hasOpenMenu.state">
-  
+
 </div>

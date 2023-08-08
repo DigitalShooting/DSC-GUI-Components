@@ -6,4 +6,13 @@
 
 .selectedGroups {
   margin-bottom: var(--navBarDisziplinSelectedGroupsPadding);
+  gap: 1vmin;
+}
+
+.groups {
+  gap: 1vmin;
+}
+
+ .selectedGroups > .box {
+   flex: 0 1 calc(25% - 1vmin);
 }

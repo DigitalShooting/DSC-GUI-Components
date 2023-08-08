@@ -1,0 +1,204 @@
+:root {
+  // --dscBaseScale: 1;
+
+  --layoutGap: calc(1vh * var(--dscBaseScale));
+
+  /* --dscBaseScale: 1; */
+  --navBarHeight: calc(12vmin * var(--dscBaseScale));
+  --navBarDropUpPadding: calc(1vmin * var(--dscBaseScale));
+  --navBarDropUpBoxPadding: calc(1vmin * var(--dscBaseScale));
+  --navBarDropUpBoxMargin: calc(1vmin * var(--dscBaseScale));
+
+	--fontSizeNavBarMain: calc(3vmin * var(--dscBaseScale));
+	--fontSizeNavBarDetail: calc(2vmin * var(--dscBaseScale));
+	--fontSizeInfoBoxTitle: calc(2.5vmin * var(--dscBaseScale));
+  --fontSizeDropUpItem: calc(3vmin * var(--dscBaseScale));
+
+
+	/* Info */
+	--overTimeTextColor: #ff0000;
+
+	/* Serie */
+	--fontSizeInfoSeriesSum: calc(2.2vmin * var(--dscBaseScale));
+
+	/* Current Shot */
+	--fontSizeInfoCurrentShotArrow: calc(8vmin * var(--dscBaseScale));
+	--fontSizeInfoCurrentShot: calc(6vmin * var(--dscBaseScale));
+	--fontSizeInfoCurrentShotTeiler: calc(3vmin * var(--dscBaseScale));
+	--currentShotArrowMargin: calc(1vmin * var(--dscBaseScale));
+
+	/* Part Overview Modal */
+	--partOverviewTitlePadding: calc(1vmin * var(--dscBaseScale));
+	--partOverviewExitTop: calc(3vmin * var(--dscBaseScale));
+	--partOverviewFontSize: calc(2.2vmin * var(--dscBaseScale));
+	--partOverviewCellPadding: calc(1vmin * var(--dscBaseScale));
+  --modalBodyPadding: calc(1vmin * var(--dscBaseScale));
+  --modalBodyFontSize: calc(2.2vmin * var(--dscBaseScale));
+
+	/* Navbar */
+	--navBarDisziplinSelectedGroupsPadding: calc(5vmin * var(--dscBaseScale));
+
+	--modalTitlePadding: calc(1vmin * var(--dscBaseScale));
+  --modalExitPaddingRight: calc(2vmin * var(--dscBaseScale));
+  --modalContentPadding: calc(2vmin * var(--dscBaseScale));
+
+  --borderRadius: calc(2.5vmin * var(--dscBaseScale));
+  --mainTextColor: rgb(0, 0, 0);
+  --detailTextColor: rgb(51, 51, 51);
+
+  --baseColor: #f5f5f5;
+  --boxColor: #ffffff;
+  --borderColor: #ebebeb;
+  --borderColorHover: #000000;
+  --borderColorSelected: #000000;
+}
+
+
+
+
+
+
+/* Flex Container Classes */
+
+/* Flex container with default row direction */
+.flex-container-row {
+  display: flex;
+  gap: var(--layoutGap);
+}
+
+/* Flex container with column direction */
+.flex-container-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layoutGap);
+}
+
+/* Flex container with default row direction */
+.flex-container-row-no-gap {
+  display: flex;
+}
+
+/* Flex container with column direction */
+.flex-container-column-no-gap {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Flex Item Alignment Classes */
+
+/* Align items along the main axis (horizontal) */
+.flex-align-items-start {
+  align-items: flex-start;
+}
+
+.flex-align-items-center {
+  align-items: center;
+}
+
+.flex-align-items-end {
+  align-items: flex-end;
+}
+
+/* Align items along the cross axis (vertical) */
+.flex-align-items-stretch {
+  align-items: stretch;
+}
+
+/* Align items at the baseline */
+.flex-align-items-baseline {
+  align-items: baseline;
+}
+
+
+/* Flex Item Justify Classes */
+
+/* Justify items along the main axis (horizontal) */
+.flex-justify-start {
+  justify-content: flex-start;
+}
+
+.flex-justify-center {
+  justify-content: center;
+}
+
+.flex-justify-end {
+  justify-content: flex-end;
+}
+
+.flex-justify-space-between {
+  justify-content: space-between;
+}
+
+.flex-justify-space-around {
+  justify-content: space-around;
+}
+
+.flex-justify-space-evenly {
+  justify-content: space-evenly;
+}
+
+
+/* Flex Item Ordering Classes */
+
+.flex-item {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+
+/* Flex item with order 1 */
+.flex-order-1 {
+  order: 1;
+}
+
+/* Flex item with order 2 */
+.flex-order-2 {
+  order: 2;
+}
+
+/* Flex item with order 3 */
+.flex-order-3 {
+  order: 3;
+}
+
+/* Flex item with order 4 */
+.flex-order-4 {
+  order: 4;
+}
+
+
+/* Flex Item Grow and Shrink Classes */
+
+/* Flex item that can grow to fill available space */
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+/* Flex item that can shrink to fit its container */
+.flex-shrink-1 {
+  flex-shrink: 1;
+}
+
+/* Flex item that cannot shrink */
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+
+/* Flex Wrap Classes */
+
+/* Flex container with items wrapping to a new line */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* Flex container with items wrapping to a new line in reverse order */
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/* Flex container with single line (no wrapping) */
+.flex-nowrap {
+  flex-wrap: nowrap;
+}

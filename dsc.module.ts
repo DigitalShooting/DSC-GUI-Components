@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NavbarsModule } from './navbars/navbars.module';
@@ -19,7 +18,6 @@ import { TargetModule } from './target/target.module';
   imports: [
     CommonModule,
     CommonModule,
-    FlexLayoutModule,
     BrowserAnimationsModule,
     NavbarsModule,
     InfoModule,

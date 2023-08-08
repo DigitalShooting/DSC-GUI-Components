@@ -18,8 +18,8 @@
         </tr>
       </table>
     </div>
-    <div fxLayout="row wrap">
-      <div class="padding serie" fxFlex="50%" fxFlex.sm="100%" *ngFor="let serie of part.serien; let serienIndex=index;">
+    <div class="flex-container-column-no-gap">
+      <div class="padding serie flex-item" *ngFor="let serie of part.serien; let serienIndex=index;">
         <p class="fullLabel center">{{serienIndex + 1}}. Serie</p>
         <table>
           <colgroup>
